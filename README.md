@@ -1,6 +1,9 @@
-# iprop_the_sequels
+# IPROP Project
+game selectie database ofzo
 
-Game database project
-
-documentation:
+## Documentation:
 - https://www.postgresqltutorial.com/postgresql-python/query/
+
+## Tutorial:
+- Remove "_EXAMPLE" from db_credentials.ini
+- Add postgre password in db_credentials
