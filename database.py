@@ -94,4 +94,24 @@ def get_genres():
     finally:
         if conn is not None:
             conn.close()
+
+def get_games(genre):
+    """ query data from the vendors table """
+    conn = None
+    try:
+        params = config()
+        conn = psycopg2.connect(**params)
+        cur = conn.cursor()
+        sql = "SELECT name FROM games WHERE games_genre = '%s' ORDER BY name"
+        cur.execute(sql % (genre.capitalize(),))
+        rows = cur.fetchall()
+
+
+        cur.close()
+        return(rows)
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
     
