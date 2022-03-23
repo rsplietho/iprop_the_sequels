@@ -21,13 +21,14 @@ def main():
         chosen_genre = input("Choose a genre: ")
     
     games = db.get_games(chosen_genre)
-    suggestions= []
-    for i in [1, 2, 3, 4, 5]:
-        suggestion = random.randint(0, len(games))
-        suggestions.append(suggestion)
-    for game in suggestions:
-        chosen_game = games[game]
-        print(chosen_game[0])
+#    suggestions= []
+#    for i in [1, 2, 3, 4, 5]:
+#        suggestion = random.randint(0, len(games))
+#        suggestions.append(suggestion)
+#    for game in suggestions:
+    for game in games:
+        print(game[0])
+    
 
 if __name__ == "__main__":
     main()
